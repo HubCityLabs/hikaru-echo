@@ -18,6 +18,7 @@ marytts_host = config.get('MaryTTS', 'host')
 marytts_port = config.get('MaryTTS', 'port')
 marytts_locale = config.get('MaryTTS', 'locale')
 marytts_voice = config.get('MaryTTS', 'voice')
+marytts_voice_selections = config.get('MaryTTS', 'voice_selections')
 
 
 ### ROUTES ###
@@ -82,7 +83,7 @@ def speak(speech_content):
                   "&effect_JetPilot_default=Default"
                   "&effect_JetPilot_help=Help"
                   "&HELP_TEXT="
-                  "&VOICE_SELECTIONS=dfki-prudence%20en_GB%20female%20unitselection%20general"
+                  "&VOICE_SELECTIONS=" + marytts_voice_selections +
                   "&AUDIO_OUT=WAVE_FILE"
                   "&LOCALE=" + marytts_locale +
                   "&VOICE=" + marytts_voice +
